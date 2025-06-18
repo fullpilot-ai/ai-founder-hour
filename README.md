@@ -1,104 +1,171 @@
-# Clean Next.js + Sanity app
+# AI Founder Hour
 
-This template includes a [Next.js](https://nextjs.org/) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
+> **An open source AI-powered matching platform for high-signal networking**
 
-![Screenshot of Sanity Studio using Presentation Tool to do Visual Editing](/sanity-next-preview.png)
+## Event Philosophy: Controlled Freedom, High-Signal Connections, Zero Social Friction
 
-## Features
+Our core belief: **High-value networking shouldn't be about surviving random breakout sessions, but about being intelligently matched with people at your level who are working on what you're trying to accomplish.**
 
-- **Next.js 15 for Performance:** Leverage the power of Next.js 15 App Router for blazing-fast performance and SEO-friendly static sites.
-- **Real-time Visual Editing:** Edit content live with Sanity's [Presentation Tool](https://www.sanity.io/docs/presentation) and see updates in real time.
-- **Live Content:** The [Live Content API](https://www.sanity.io/live) allows you to deliver live, dynamic experiences to your users without the complexity and scalability challenges that typically come with building real-time functionality.
-- **Customizable Pages with Drag-and-Drop:** Create and manage pages using a page builder with dynamic components and [Drag-and-Drop Visual Editing](https://www.sanity.io/visual-editing-for-structured-content).
-- **Powerful Content Management:** Collaborate with team members in real-time, with fine-grained revision history.
-- **AI-powered Media Support:** Auto-generate alt text with [Sanity AI Assist](https://www.sanity.io/ai-assist).
-- **On-demand Publishing:** No waiting for rebuilds—new content is live instantly with Incremental Static Revalidation.
-- **Easy Media Management:** [Integrated Unsplash support](https://www.sanity.io/plugins/sanity-plugin-asset-source-unsplash) for seamless media handling.
+We reject the old model of:
+- Rigid, top-down panels
+- Awkward breakout roulette where you're stuck with random people
+- Endless group chats with no structure, exit, or quality filter
+- Wasting time with people who don't match your goals or level
 
-## Demo
+Instead, we build a system that maximizes:
+- **Goal-aligned matching** — you're paired with people working on similar challenges
+- **Quality filtering** — you can quickly assess if this room is worth your time
+- **Strategic optionality** — choose rooms that advance your specific objectives
+- **Flow-state transitions** — move efficiently between high-value conversations
+- **Social permission to move on** — exit gracefully when it's not a fit
 
-https://template-nextjs-clean.sanity.dev
+## Foundational Principles
+
+### 1. Rotational Micro-Rooms
+Users are offered 2–3 room choices per round — not 10. Each room is a thematic, high-context space curated specifically to **match your goals and filter for relevant participants**. Examples include:
+- "AI Infra Deep Dive" — *Recommended because you're scaling ML infrastructure; 4 other CTOs with similar challenges*
+- "Founder Sales Stack" — *Perfect for your B2B SaaS growth stage; includes 2 founders who've hit $1M ARR*
+- "Hiring in GenAI" — *You need technical recruiting help; room has 3 founders who've successfully hired AI teams*
+
+You can instantly gauge: "This room will help me solve X problem with people who've been there" or "This is a waste of time, these people are at the wrong stage." This goal-oriented matching means you spend time with people who can actually help you accomplish what you came for.
+
+### 2. Autonomy Within Structure
+- No one is forced into a room
+- No one is stuck in one
+- Users move between rooms via a personalized web-based selector
+- It feels like choosing your own table at a founder dinner, not being dropped into random Zoom roulette
+
+### 3. Lightweight Identity Signaling
+Room menus are enriched with both personalized recommendations and subtle social context:
+- **Personal relevance**: "This matches your interest in AI infrastructure scaling"
+- **Social proof**: "3 other early-stage founders already in this room"
+- **Stage alignment**: "Popular with first-time fundraisers like yourself"
+
+The AI explains not just what the room is about, but specifically why **you** should consider joining based on your profile, goals, and current challenges. Users self-sort into rooms that match their precise needs, not just broad categories. This creates higher mutual relevance without the awkwardness of forced intros.
+
+### 4. Polite Exit Paths
+- Leaving a room is normalized and expected
+- Users exit with a click, not an apology
+- They can say: "I'm switching rooms — this was great" without social risk
+- Leaving a room isn't a failure or social mistake — it's how the system is supposed to work
+
+### 5. Quick Quality Assessment
+After each room, users can optionally provide a quick star rating:
+- "How valuable was this conversation?" (1-5 stars)
+
+This simple feedback helps improve future room recommendations without creating unnecessary friction.
+
+## Technical Architecture
+
+### Powered by Zoom Web SDK + Next.js
+- All sessions run as separate Zoom meetings embedded in a single app
+- Users never leave your app — just switch room contexts inside it
+- Full tracking and personalized access
+- Snappy room-switching experience
+
+### You maintain total control over:
+- Room rotation timing
+- Access control
+- Experience pacing
+- Analytics and insights
+
+## The Result
+
+| Property | Outcome |
+|----------|---------|
+| **Goal-aligned** | Connect with people who can actually help you |
+| **Quality-filtered** | Skip irrelevant conversations, avoid time-wasters |
+| **Personalized** | Feels intentional, not random |
+| **Lightweight** | No complex onboarding or app installs |
+| **Structured** | Timing, pacing, and flow are guided |
+| **Flexible** | Users explore on their terms |
+| **High-conversion** | More follow-ups, higher return per session |
+
+> This isn't another Zoom networking event where you hope for the best. It's a system designed to connect you with the exact people who can help you accomplish what you're working on.
 
 ## Getting Started
 
-### Installing the template
+### Prerequisites
+- Node.js 18+ and npm
+- Zoom SDK credentials
+- PostgreSQL database (for production)
 
-#### 1. Initialize template with Sanity CLI
+### Installation
 
-Run the command in your Terminal to initialize this template on your local computer.
-
-See the documentation if you are [having issues with the CLI](https://www.sanity.io/help/cli-errors).
-
-```shell
-npm create sanity@latest -- --template sanity-io/sanity-template-nextjs-clean
+1. Clone the repository:
+```bash
+git clone https://github.com/your-org/ai-founder-hour.git
+cd ai-founder-hour
 ```
 
-#### 2. Run Studio and Next.js app locally
+2. Install dependencies:
+```bash
+npm install
+```
 
-Navigate to the template directory using `cd <your app name>`, and start the development servers by running the following command
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-```shell
+4. Configure your environment variables:
+```bash
+NEXT_PUBLIC_ZOOM_SDK_KEY=your_zoom_sdk_key
+ZOOM_SDK_SECRET=your_zoom_sdk_secret
+DATABASE_URL=your_database_url
+NEXTAUTH_SECRET=your_nextauth_secret
+```
+
+5. Run the development server:
+```bash
 npm run dev
 ```
 
-#### 3. Open the app and sign in to the Studio
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-Open the Next.js app running locally in your browser on [http://localhost:3000](http://localhost:3000).
+## Project Structure
 
-Open the Studio running locally in your browser on [http://localhost:3333](http://localhost:3333). You should now see a screen prompting you to log in to the Studio. Use the same service (Google, GitHub, or email) that you used when you logged in to the CLI.
-
-### Adding content with Sanity
-
-#### 1. Publish your first document
-
-The template comes pre-defined with a schema containing `Page`, `Post`, `Person`, and `Settings` document types.
-
-From the Studio, click "+ Create" and select the `Post` document type. Go ahead and create and publish the document.
-
-Your content should now appear in your Next.js app ([http://localhost:3000](http://localhost:3000)) as well as in the Studio on the "Presentation" Tab
-
-#### 2. Import Sample Data (optional)
-
-You may want to start with some sample content and we've got you covered. Run this command from the root of your project to import the provided dataset (sample-data.tar.gz) into your Sanity project. This step is optional but can be helpful for getting started quickly.
-
-```shell
-npm run import-sample-data
+```
+ai-founder-hour/
+├── frontend/              # Next.js application
+│   ├── app/              # App router pages
+│   ├── components/       # React components
+│   ├── lib/             # Utility functions
+│   └── public/          # Static assets
+├── backend/             # API and business logic
+├── database/            # Database schemas and migrations
+└── docs/               # Documentation
 ```
 
-#### 3. Extending the Sanity schema
+## Contributing
 
-The schema for the `Post` document type is defined in the `studio/src/schemaTypes/post.ts` file. You can [add more document types](https://www.sanity.io/docs/schema-types) to the schema to suit your needs.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-### Deploying your application and inviting editors
+### Development Workflow
 
-#### 1. Deploy Sanity Studio
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Your Next.js frontend (`/frontend`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
+## License
 
-Back in your Studio directory (`/studio`), run the following command to deploy your Sanity Studio.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```shell
-npx sanity deploy
-```
+## Acknowledgments
 
-#### 2. Deploy Next.js app to Vercel
+- Built with [Next.js](https://nextjs.org/)
+- Powered by [Zoom Web SDK](https://developers.zoom.us/docs/meeting-sdk/web/)
+- Inspired by the need for better virtual networking
 
-You have the freedom to deploy your Next.js app to your hosting provider of choice. With Vercel and GitHub being a popular choice, we'll cover the basics of that approach.
+## Contact
 
-1. Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
-2. Create a new Vercel project and connect it to your Github repository.
-3. Set the `Root Directory` to your Next.js app.
-4. Configure your Environment Variables.
+For questions, suggestions, or collaborations:
+- Open an issue on GitHub
+- Email: contact@aifounderhour.com
+- Twitter: [@aifounderhour](https://twitter.com/aifounderhour)
 
-#### 3. Invite a collaborator
+---
 
-Now that you’ve deployed your Next.js application and Sanity Studio, you can optionally invite a collaborator to your Studio. Open up [Manage](https://www.sanity.io/manage), select your project and click "Invite project members"
-
-They will be able to access the deployed Studio, where you can collaborate together on creating content.
-
-## Resources
-
-- [Sanity documentation](https://www.sanity.io/docs)
-- [Next.js documentation](https://nextjs.org/docs)
-- [Join the Sanity Community](https://slack.sanity.io)
-- [Learn Sanity](https://www.sanity.io/learn)
+**Built by founders, for founders.**

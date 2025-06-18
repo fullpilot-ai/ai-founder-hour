@@ -1,85 +1,74 @@
-import { Suspense } from "react";
 import Link from "next/link";
-import { PortableText } from "@portabletext/react";
 
-import { AllPosts } from "@/app/components/Posts";
-import GetStartedCode from "@/app/components/GetStartedCode";
-import SideBySideIcons from "@/app/components/SideBySideIcons";
-import { settingsQuery } from "@/sanity/lib/queries";
-import { sanityFetch } from "@/sanity/lib/live";
-
-export default async function Page() {
-  const { data: settings } = await sanityFetch({
-    query: settingsQuery,
-  });
-
+export default function HomePage() {
   return (
-    <>
-      <div className="relative">
-        <div className="relative bg-[url(/images/tile-1-black.png)] bg-size-[5px]">
-          <div className="bg-gradient-to-b from-white w-full h-full absolute top-0"></div>
-          <div className="container">
-            <div className="relative min-h-[40vh] mx-auto max-w-2xl pt-10 xl:pt-20 pb-30 space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center">
-              <div className="flex flex-col gap-4 items-center">
-                <div className="text-md leading-6 prose uppercase py-1 px-3 bg-white font-mono italic">
-                  A starter template for
-                </div>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-black">
-                  <Link
-                    className="underline decoration-brand hover:text-brand underline-offset-8 hover:underline-offset-4 transition-all ease-out"
-                    href="https://sanity.io/"
-                  >
-                    Sanity
-                  </Link>
-                  +
-                  <Link
-                    className="underline decoration-black text-framework underline-offset-8 hover:underline-offset-4 transition-all ease-out"
-                    href="https://nextjs.org/"
-                  >
-                    Next.js
-                  </Link>
-                </h1>
-              </div>
-            </div>
-          </div>
+    <div className="space-y-12">
+      {/* Hero Section */}
+      <section className="text-center py-16">
+        <h1 className="text-5xl font-bold mb-4">Welcome to AI Founder Hour</h1>
+        <p className="text-xl text-gray-600 mb-8">
+          Learn about artificial intelligence and entrepreneurship
+        </p>
+        <Link
+          href="/posts"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Read Our Blog
+        </Link>
+      </section>
+
+      {/* Features Section */}
+      <section className="grid md:grid-cols-3 gap-8">
+        <div className="text-center p-6 border rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">AI Insights</h3>
+          <p className="text-gray-600">
+            Stay updated with the latest trends in artificial intelligence
+          </p>
         </div>
-        <div className=" flex flex-col items-center">
-          <SideBySideIcons />
-          <div className="container relative mx-auto max-w-2xl pb-20 pt-10 space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center">
-            <div className="prose sm:prose-lg md:prose-xl xl:prose-2xl text-gray-700 prose-a:text-gray-700 font-light text-center">
-              {settings?.description && (
-                <PortableText value={settings.description} />
-              )}
-              <div className="flex items-center flex-col gap-4">
-                <GetStartedCode />
-                <Link
-                  href="https://www.sanity.io/docs"
-                  className="inline-flex text-brand text-xs md:text-sm underline hover:text-gray-900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sanity Documentation
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 ml-1 inline"
-                    fill="currentColor"
-                  >
-                    <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V12L17.206 8.207L11.2071 14.2071L9.79289 12.7929L15.792 6.793L12 3H21Z"></path>
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
+        <div className="text-center p-6 border rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Startup Tips</h3>
+          <p className="text-gray-600">
+            Learn from successful founders and their experiences
+          </p>
         </div>
-      </div>
-      <div className="border-t border-gray-100 bg-gray-50">
-        <div className="container">
-          <aside className="py-12 sm:py-20">
-            <Suspense>{await AllPosts()}</Suspense>
-          </aside>
+        <div className="text-center p-6 border rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Resources</h3>
+          <p className="text-gray-600">
+            Access curated tools and resources for your journey
+          </p>
         </div>
-      </div>
-    </>
+      </section>
+
+      {/* Recent Posts Section */}
+      <section>
+        <h2 className="text-3xl font-bold mb-6">Recent Posts</h2>
+        <div className="space-y-4">
+          <article className="border-b pb-4">
+            <h3 className="text-xl font-semibold mb-1">
+              <Link href="/posts/getting-started-with-ai" className="hover:text-blue-600">
+                Getting Started with AI
+              </Link>
+            </h3>
+            <p className="text-gray-600">A beginner&apos;s guide to artificial intelligence</p>
+          </article>
+          <article className="border-b pb-4">
+            <h3 className="text-xl font-semibold mb-1">
+              <Link href="/posts/building-your-first-startup" className="hover:text-blue-600">
+                Building Your First Startup
+              </Link>
+            </h3>
+            <p className="text-gray-600">Essential steps to launch your business</p>
+          </article>
+          <article className="border-b pb-4">
+            <h3 className="text-xl font-semibold mb-1">
+              <Link href="/posts/ai-tools-for-founders" className="hover:text-blue-600">
+                AI Tools for Founders
+              </Link>
+            </h3>
+            <p className="text-gray-600">Top AI tools to boost your productivity</p>
+          </article>
+        </div>
+      </section>
+    </div>
   );
 }
