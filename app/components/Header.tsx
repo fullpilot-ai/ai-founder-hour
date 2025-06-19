@@ -8,7 +8,7 @@ export default function Header() {
         <nav className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo-light.png"
               alt="AI Founder Hour Logo"
               width={40}
               height={40}

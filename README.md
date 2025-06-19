@@ -1,7 +1,7 @@
 # AI Founder Hour
 
 <div align="center">
-  <img src="public/logo.png" alt="AI Founder Hour Logo" width="200" />
+  <img src="public/logo-light.png" alt="AI Founder Hour Logo" width="200" />
 </div>
 
 > **An open source AI-powered matching platform for high-signal networking**
@@ -136,7 +136,8 @@ ai-founder-hour/
 │   ├── posts/          # Blog posts
 │   └── ...             # Other app routes
 ├── public/             # Static assets
-│   └── logo.png        # Project logo
+│   ├── logo-light.png  # Light version logo
+│   └── logo-dark.png   # Dark version logo
 ├── next.config.ts      # Next.js configuration
 ├── tailwind.config.ts  # Tailwind CSS configuration
 ├── package.json        # Dependencies and scripts
