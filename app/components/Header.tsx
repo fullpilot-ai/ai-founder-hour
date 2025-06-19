@@ -22,11 +22,8 @@ export default function Header() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/posts" className="text-gray-600 hover:text-gray-900">
-              Blog
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900">
-              About
+            <Link href="/sales" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Join Session
             </Link>
           </div>
         </nav>

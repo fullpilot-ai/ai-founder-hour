@@ -133,7 +133,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 ai-founder-hour/
 ├── app/                 # Next.js app router pages
 │   ├── components/      # React components
-│   ├── posts/          # Blog posts
+│   ├── sales/          # Sales/signup page
 │   └── ...             # Other app routes
 ├── public/             # Static assets
 │   ├── logo-light.png  # Light version logo
