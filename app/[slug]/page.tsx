@@ -23,8 +23,9 @@ const pages = {
   }
 };
 
-export default function DynamicPage({ params }: { params: { slug: string } }) {
-  const page = pages[params.slug as keyof typeof pages];
+export default async function DynamicPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const page = pages[slug as keyof typeof pages];
   
   if (!page) {
     notFound();
