@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/brandonhhays/founderhour/ai-founder-hour/app/components/DraftModeToast.tsx"],"sourcesContent":["\"use client\";\n\nimport {\n  useDraftModeEnvironment,\n  useIsPresentationTool,\n} from \"next-sanity/hooks\";\nimport { useRouter } from \"next/navigation\";\nimport { useEffect, useTransition } from \"react\";\nimport { toast } from \"sonner\";\nimport { disableDraftMode } from \"@/app/actions\";\n\nexport default function DraftModeToast() {\n  return null;\n}\n"],"names":[],"mappings":";;;AAAA;AAWe,SAAS;IACtB,OAAO;AACT;KAFwB","debugId":null}}]
+}

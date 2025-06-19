@@ -1,5 +1,9 @@
 # AI Founder Hour
 
+<div align="center">
+  <img src="public/logo.png" alt="AI Founder Hour Logo" width="200" />
+</div>
+
 > **An open source AI-powered matching platform for high-signal networking**
 
 ## Event Philosophy: Controlled Freedom, High-Signal Connections, Zero Social Friction
@@ -127,14 +131,16 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 
 ```
 ai-founder-hour/
-├── frontend/              # Next.js application
-│   ├── app/              # App router pages
-│   ├── components/       # React components
-│   ├── lib/             # Utility functions
-│   └── public/          # Static assets
-├── backend/             # API and business logic
-├── database/            # Database schemas and migrations
-└── docs/               # Documentation
+├── app/                 # Next.js app router pages
+│   ├── components/      # React components
+│   ├── posts/          # Blog posts
+│   └── ...             # Other app routes
+├── public/             # Static assets
+│   └── logo.png        # Project logo
+├── next.config.ts      # Next.js configuration
+├── tailwind.config.ts  # Tailwind CSS configuration
+├── package.json        # Dependencies and scripts
+└── README.md           # This file
 ```
 
 ## Contributing
