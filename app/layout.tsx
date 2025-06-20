@@ -8,6 +8,8 @@ const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+  fallback: ["system-ui", "arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={`${archivo.variable} scroll-smooth`}>
-      <body className="antialiased">
+      <body className={`${archivo.className} antialiased font-sans`}>
         <main>
           {children}
         </main>
