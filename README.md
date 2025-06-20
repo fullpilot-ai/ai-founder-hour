@@ -6,7 +6,9 @@
 
 > **An open source AI-powered matching platform for high-signal networking**
 
-## Event Philosophy: Controlled Freedom, High-Signal Connections, Zero Social Friction
+## Event Philosophy: Move Freely Between Conversations That Matter
+
+AI-curated rooms mean you only connect with founders working on similar challenges. Skip the small talk, find your people, and leave politely when conversations aren't adding value.
 
 Our core belief: **High-value networking shouldn't be about surviving random breakout sessions, but about being intelligently matched with people at your level who are working on what you're trying to accomplish.**
 

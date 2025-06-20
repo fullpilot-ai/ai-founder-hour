@@ -13,6 +13,11 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: "AI Founder Hour",
   description: "Learn about AI and entrepreneurship",
+  icons: {
+    icon: "/arrow-icon.png",
+    shortcut: "/arrow-icon.png",
+    apple: "/arrow-icon.png",
+  },
 };
 
 export default async function RootLayout({

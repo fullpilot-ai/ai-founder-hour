@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/brandonhhays/founderhour/ai-founder-hour/app/layout":["static/media/1a4aa50920b5315c-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
